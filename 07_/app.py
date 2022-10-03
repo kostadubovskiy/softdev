@@ -15,16 +15,19 @@ app.run()  # Q5: Where have you seen similar constructs in other languages?
 
 '''
 DISCO:
+* Our program does not work for unanticipated reasons
+* We host the app locally
 QCC:
-0. 
-1. 
-2. 
-3. 
-4. 
-5. 
+0. Java init functions are similar, the __[]__ usually symbolizes something default
+1. It means root directory often
+2. To the app root directory, since we routed everything there
+3. No hablo queso!
+4. Probably on the website, since we routed the app there
+5. We've seen similar stuff in Flutter and React/JS
 ...
 INVESTIGATIVE APPROACH:
 <Your concise summary of how
  you and your team set about
  "illuminating the cave of ignorance" here...>
+ * 
 '''
