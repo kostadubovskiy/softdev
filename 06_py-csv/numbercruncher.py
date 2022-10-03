@@ -2,16 +2,13 @@
 Flying Chihuahuas: Nicholas Tarsis, Kosta Dubovskiy
 Soft Dev
 #6
-22-09-29
+22-09-30
 '''
 
 '''
 DISCO:
-
-* 
+*Global/local variable scope in python
 QCC:
-
-HOW THIS SCRIPT WORKS:
 
 '''
 import random
