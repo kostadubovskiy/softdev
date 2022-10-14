@@ -1,7 +1,22 @@
-# Clyde 'Thluffy' Sinclair
-# SoftDev
-# Oct 2022
+'''
+TEAM KrEWes: Elizabeth Paperno, Raven (Ruiwen) Tang, William Vongphanith, Kosta Dubovskiy
+SoftDev
+K10 -- Using Flask with Templates
+2022-10-13
+Time Spent: 0.5 hours
 
+DISCO
+___________
+- When you open the html file directly it prints what is in the body (the templating things).
+- When you run it with Flask it populates the template.
+-
+
+QCC
+___________
+- Why do you have to explicity pass through values in the render_template function?
+- Can we refer to a variable twice in a template? 
+
+'''
 from flask import Flask, render_template #Q0: What will happen if you remove render_template from this line? (log your prediction before you pull the trigger...)
 app = Flask(__name__)
 
