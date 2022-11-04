@@ -1,7 +1,6 @@
 from flask import Flask             #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
-from flask import request  
-from flask import session
+from flask import request, session, redirect, url_for
 
 app = Flask(__name__)    #create Flask object
 
@@ -10,11 +9,19 @@ app.secret_key = 'hi'
 
 @app.route("/")
 def foo():
+    if "username" in session:
+        return f"logged in as {session['usernames']}"
+    return "youre not logged in bud"
+
+
+@app.route("/login", methods=["GET", "POST"])
+def foo2():
+    if request.method == "POST":
+        print("hello")
+        session['username'] = request.form['username']
+        return redirect(url_for('foo'))
     return render_template('login.html')
 
-
-@app.route("/response", methods=["POST"])
-def foo2():
     usernames=['yee', 'ah']
     passwords=['goofy', 'ah']
     usr_in=request.form['username']
