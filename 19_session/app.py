@@ -25,7 +25,7 @@ def foo2():
     response_var = ""
     if usr_in in usernames and pwd_in == passwords[usernames.index(usr_in)]:
         login=True
-        return render_template('response.html',v1="top g has logged in"
+        return render_template('response.html',v1="top g has logged in")
     else:
         return render_template('login.html',fail_login='password or username is wrong, please try again')
     
