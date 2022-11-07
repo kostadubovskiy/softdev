@@ -7,6 +7,8 @@ app = Flask(__name__)    #create Flask object
 app.secret_key = 'hi'
 usernames=['yee', 'ah']
 passwords = ['goofy', 'ah']
+global msg
+msg = ''
 
 @app.route('/')
 def index():
@@ -16,23 +18,21 @@ def index():
                 curr_usr = session['username']
                 print(curr_usr)
                 return render_template('response.html', username=curr_usr)
-    return redirect(url_for('relogin'))
+            else:
+                msg = 'Wrong password'
+        else:
+            msg = 'Wrong username'
+    return redirect(url_for('login'))
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    #global msg
+    #msg = 'Wrong'
     if request.method == 'POST':
         session['username'] = request.form['username']
         session['password'] = request.form['password']
         return redirect(url_for('index'))
-    return render_template('login.html')
-
-@app.route('/relogin', methods=['GET', 'POST'])
-def relogin():
-    if request.method == 'POST':
-        session['username'] = request.form['username']
-        session['password'] = request.form['password']
-        return redirect(url_for('index'))
-    return render_template('relogin.html')
+    return render_template('login.html', msg=msg)
 
 @app.route('/logout')
 def logout():
