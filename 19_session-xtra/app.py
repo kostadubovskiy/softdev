@@ -12,6 +12,7 @@ msg = ''
 
 @app.route('/')
 def index():
+    global msg
     if 'username' in session and 'password' in session:
         if session['username'] in usernames:
             if passwords[usernames.index(session['username'])] == session['password']:
@@ -22,15 +23,22 @@ def index():
                 msg = 'Wrong password'
         else:
             msg = 'Wrong username'
+    #return render_template('login.html', msg=msg)
     return redirect(url_for('login'))
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    #global msg
-    #msg = 'Wrong'
     if request.method == 'POST':
-        session['username'] = request.form['username']
-        session['password'] = request.form['password']
+        session['username'] = (request.form['username'])
+        session['password'] = (request.form['password'])
+        
+        if session['username'] in usernames:
+            if passwords[usernames.index(session['username'])] == session['password']:
+                return render_template('response.html', username=session['username'])
+            else:
+                msg = 'Wrong password'
+        else:
+            msg = 'Wrong username'
         return redirect(url_for('index'))
     return render_template('login.html', msg=msg)
 
