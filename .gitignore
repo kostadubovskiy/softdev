@@ -107,7 +107,7 @@ venv.bak/
 # BOSS XTRAS
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Text Backup Files #
-# *.s[a-w][a-z]
+*.s[a-w][a-z]
 *~
 \#*\#
 .\#*
