@@ -107,11 +107,70 @@ const myFxn = (a, b) => {
   addItem("gcd(a,b): " + gcd(a,b));
   addItem("fact(a): " + fact(a));
   addItem("fib(b): " + fib(b));
+ 
+  return "successssssss";
+};
+const myFunn =()=> {
+  var a = getRandomInt(10);
+  var b = getRandomInt(10);
+  removeItem(13);
+  removeItem(12);
+  removeItem(11);
+  removeItem(10);
+  removeItem(9);
 
+  addItem("a: " + a);
+  addItem("b: " + b);
+  addItem("gcd(a,b): " + gcd(a,b));
+  addItem("fact(a): " + fact(a));
+  addItem("fib(b): " + fib(b));
+ 
   return "successssssss";
 };
 
 
+var result = gcd(6,2);
+var dasbut = document.getElementById("b");
+dasbut.addEventListener('click',  myFunn);
+const element= document.getElementById("thelist");
+let num= element.childNodes.length;
+const PrintNodes=()=>{
+  console.log(element);
+  console.log(num);
+  console.log(element.childNodes);
+}
+const button2= document.getElementById("c");
+button2.addEventListener('click',PrintNodes);
 function getRandomInt(max) {
   return Math.floor(Math.random() * max) + 1;
 }
+
+const GCF=()=> {
+  var a = getRandomInt(10);
+  var b = getRandomInt(10);
+  addItem("a: " + a);
+  addItem("b: " + b);
+  addItem("gcd(a,b): " + gcd(a,b));
+
+}
+
+var button3 = document.getElementById("d");
+button3.addEventListener('click',  GCF);
+
+
+const fiba=()=> {
+  var a = getRandomInt(10);
+  addItem("a: " + a);
+  addItem("fib(a): " + fib(a));
+
+}
+var button5 = document.getElementById("e");
+button5.addEventListener('click',  fiba);
+
+const faca=()=>{
+  var a = getRandomInt(10);
+  addItem("a: " + a);
+  addItem("fact(a):" + fact(a));
+}
+var button4 = document.getElementById("f");
+button4.addEventListener('click',  faca);
