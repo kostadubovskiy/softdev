@@ -9,8 +9,12 @@ var toggleMode = (e) => {
     console.log("toggling...");
     if (mode == "rect") {
         mode = "circle";
+        let shape = "Circle";
+        document.getElementById("rect|circ").innerHTML = shape;
     } 
     else {
+        let shape = "Rectangle";
+        document.getElementById("rect|circ").innerHTML = shape;
         mode = "rect";
     }
 }
