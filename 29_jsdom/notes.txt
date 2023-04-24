@@ -1,17 +1,18 @@
-TAK -- Ameer Alnasser, Kosta Dubovskiy
- SoftDev pd2
- K28 -- Manipulating the DOM
- 2023-04-17
+Team Dragonite :: Jeffrey Z, Shafiul H
+SoftDev pd2
+K289 -- DOMfoolery++
+2023-04-20t
 
-Comments:
-javascript doesnt have a main function
+DISCO
+-----------------------------------------------------------------
+- helper functions go a long way
+- addEventListener helps relay the information from the button to the code
+- the innerHTML function helps print out the variable into the HTML
+=================================================================
 
-.onload() helps have functions that work with every refresh, "automatic"
-
-GCD is a % b if a % b != 0
- 
-javascript interacts with html files and can change features of it
-
-Questions
-
-N/A
+QCC
+-----------------------------------------------------------------
+* Is it fine if the console log gives errors when running the function?
+* Is there a cleaner way to write the code?
+* Onclick seems pretty important in displaying the information
+=================================================================

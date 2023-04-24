@@ -1,37 +1,35 @@
-// Team Casa Blanca -- Sam Cowan, Ameer Alnasser
+// Team Dragonite :: Jeffrey Z, Shafiul H
 // SoftDev pd2
-// K28 -- Manipulating the DOM
-// 2023-04-17
-// --------------------------------------------------
-
+// K29 -- DOMfoolery++
+// 2023-04-20t
 
 //send diagnostic output to console
 //(Ctrl-Shift-K in Firefox to reveal console)
-console.log("AYO"); //Gets printed before you do anything
+console.log("AYO");
 
-var i = "hello"; //typing i or j in the terminal will return these
+var i = "hello";
 var j = 20;
 
 
 //assign an anonymous fxn to a var
-var f = function(x) { //adds 30 to input
+var f = function(x) {
   var j=30;
   return j+x;
 };
 
 
 //instantiate an object
-var o = { 'name' : 'Thluffy', //Can do o["name"] in dev console to return
-          age : 1024, //needs quotes
-          items : [10, 20, 30, 40], //o["items"][1] returns 20
+var o = { 'name' : 'Thluffy',
+          age : 1024,
+          items : [10, 20, 30, 40],
           morestuff : {a : 1, b : 'ayo'},
-          func : function(x) { //o["func"](7) runs the function
+          func : function(x) {
             return x+30;
           }
         };
 
 
-var addItem = function(text) { //adds item to list on webpage
+var addItem = function(text) {
   var list = document.getElementById("thelist");
   var newitem = document.createElement("li");
   newitem.innerHTML = text;
@@ -39,13 +37,13 @@ var addItem = function(text) { //adds item to list on webpage
 };
 
 
-var removeItem = function(n) { //removes item index n from list
+var removeItem = function(n) {
   var listitems = document.getElementsByTagName('li');
   listitems[n].remove();
 };
 
 
-var red = function() { //makes the first and last thing on the list red
+var red = function() {
   var items = document.getElementsByTagName("li");
   for(var i = 0; i < items.length; i++) {
     items[i].classList.add('red');
@@ -53,7 +51,7 @@ var red = function() { //makes the first and last thing on the list red
 };
 
 
-var stripe = function() { //makes the first red, all else blue
+var stripe = function() {
   var items = document.getElementsByTagName("li");
   for(var i = 0; i < items.length; i++) {
     if (i%2==0){
@@ -65,112 +63,75 @@ var stripe = function() { //makes the first red, all else blue
 };
 
 //insert your implementations here for...
+// FIB
 function fib(n){
-  if(n === 0){
-    return 0;
-  }
-  else if (n < 3) {
-    return 1;
+
+  if (n <= 1){
+	  return n
   }
   return fib(n-1)+fib(n-2);
 }
-
-function fact(n){
-  if(n < 2){
-    return 1;
-  }
-  return (n*fact(n-1));
+// FAC
+function fact(n) {
+	if (n < 2) 
+        return 1;
+      else {
+          return (n * fact(n - 1));
+      }
 }
-
-function gcd(a,b){
-  if (a > b){
-    if (a % b === 0){
-      return b;
-    }
-    return gcd(b, a%b);
+// GCD
+function gcd(a, b) {
+  if (b === 0) {
+    return a;
   }
-  if (a < b){
-    if (b % a === 0){
-      return a;
-    }
-    return gcd(a, b%a);
-  }
-  return a;
+  return gcd(b, a % b);
 }
-
 // In addition to the style shown above,
 //  you are encouraged to test drive the "arrow function syntax" as shown below.
 //  Note anything notable.
-const myFxn = (a, b) => {
-  addItem("a: " + a);
-  addItem("b: " + b);
-  addItem("gcd(a,b): " + gcd(a,b));
-  addItem("fact(a): " + fact(a));
-  addItem("fib(b): " + fib(b));
- 
-  return "successssssss";
-};
-const myFunn =()=> {
-  var a = getRandomInt(10);
-  var b = getRandomInt(10);
-  removeItem(13);
-  removeItem(12);
-  removeItem(11);
-  removeItem(10);
-  removeItem(9);
-
-  addItem("a: " + a);
-  addItem("b: " + b);
-  addItem("gcd(a,b): " + gcd(a,b));
-  addItem("fact(a): " + fact(a));
-  addItem("fib(b): " + fib(b));
- 
-  return "successssssss";
+const myFxn = (param1, param2) => {
+  // body
+  return retVal;
 };
 
+document.getElementById("fib").innerHTML = fib(5);
+document.getElementById("fact").innerHTML = fact(5);
+document.getElementById("gcd").innerHTML = gcd(5,7);
 
-var result = gcd(6,2);
-var dasbut = document.getElementById("b");
-dasbut.addEventListener('click',  myFunn);
-const element= document.getElementById("thelist");
-let num= element.childNodes.length;
-const PrintNodes=()=>{
-  console.log(element);
-  console.log(num);
-  console.log(element.childNodes);
-}
-const button2= document.getElementById("c");
-button2.addEventListener('click',PrintNodes);
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max) + 1;
+function helper1(){
+  console.log(fib(20))
+  document.getElementById("one").innerHTML = fib(20)
 }
 
-const GCF=()=> {
-  var a = getRandomInt(10);
-  var b = getRandomInt(10);
-  addItem("a: " + a);
-  addItem("b: " + b);
-  addItem("gcd(a,b): " + gcd(a,b));
-
+function helper2(){
+  console.log(fib(20))
+  document.getElementById("two").innerHTML = fact(20)
 }
 
-var button3 = document.getElementById("d");
-button3.addEventListener('click',  GCF);
-
-
-const fiba=()=> {
-  var a = getRandomInt(10);
-  addItem("a: " + a);
-  addItem("fib(a): " + fib(a));
-
+function helper3(){
+  console.log(fib(20))
+  document.getElementById("three").innerHTML = gcd(20,7)
 }
-var button5 = document.getElementById("e");
-button5.addEventListener('click',  fiba);
 
-const faca=()=>{
-  var a = getRandomInt(10);
-  addItem("a: " + a);
-  addItem("fact(a):" + fact(a));
+function fibb(){
+  var dasbut = document.getElementById("a"); 
+  console.log('ok')
+  dasbut.addEventListener('click', helper1());
 }
-var button4 = document.getElementById("f");
-button4.addEventListener('click',  faca);
+
+function facc(){
+  var dasbut = document.getElementById("b"); 
+  console.log('ok')
+  dasbut.addEventListener('click', helper2());
+}
+
+function gcdd(){
+  var dasbut = document.getElementById("c"); 
+  console.log('ok')
+  dasbut.addEventListener('click', helper3());
+}
+// {
+//   console.log(fib(20))
+//   document.getElementById("a").innerHTML = fib(20);
+//   console.log('ok')
+// }

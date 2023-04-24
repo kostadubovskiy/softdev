@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
 <!--
-     Team Casa Blanca -- Sam Cowan, Ameer Alnasser
-     SoftDev pd2
-     K28 -- Manipulating the DOM
-     2023-04-17
+     Team Dragonite :: Jeffrey Z, Shafiul H
+    SoftDev pd2
+    K29 -- DOMfoolery++
+    2023-04-20t
    --------------------------------------------------
 -->
 
@@ -20,22 +20,13 @@
     </style>
   </head>
 
-  <body onload="myFxn(getRandomInt(10),getRandomInt(10))">  
+  <body>
     <h1 id="h" class="blue">Hello World!</h1>
-    <button id="b"> The button </button>
-    <br>
 
-    <button id="c"> The print button </button>
-    <br>
-    <button id="d"> The gcd button </button>
-    <br>
-    <button id="e"> The fib button </button>
-    <br>
-    <button id="f"> The fact button </button>
-    <div id="div1" class="green">This is a div</div>
-    <div id="div2">This is a second div</div>
-    <div class="blue">This is a toid div</div>
-    <br>
+    <div id="div1" class="green">The fib of 5 is <span id="fib"></span></div>
+    <div id="div2">The fact of 5 is <span id="fact"></span></div>
+    <div class="blue">The gcd between 5 and 7 is <span id="gcd"></span></div>
+    
     <ol id="thelist">
       <li class="">item 0</li>
       <li class="green blue">item 1</li>
@@ -45,9 +36,18 @@
       <li class="green blue">item 5</li>
       <li class="green blue">item 6</li>
       <li class="">item 7</li>
-      <li class="green blue"></li>
     </ol>
-    <script src="dommy_consolery.js"></script>
+
+    <button type="button" id="a" onclick="fibb()">Fib(20)</button>
+    <div id="div1" class="green">The fib of 20 is <span id="one"></span></div>
+    <button type="button" id="b" onclick="facc()">Fact(20)</button>
+    <div id="div1" class="green">The fact of 20 is <span id="two"></span></div>
+    <button type="button" id="c" onclick="gcdd()">GCD(20,7)</button>
+    <div id="div1" class="green">The gcd of 20 and 7 is <span id="three"></span></div>
+
+    <script src="dommy_consolery.js">
+
+    </script>
 
   </body>
 </html>
