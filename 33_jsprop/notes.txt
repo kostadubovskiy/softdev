@@ -1,0 +1,10 @@
+Team TAK: Ameer A, Kosta D
+SoftDev pd2
+K33 -- Bubbles and  Captures
+2023-04-27
+
+# Bubble Phase
+This is when event handlers are called from the event-origin element, basically the priority ranking "bubbles up" from the event. High specificity(element) --> High generality(document)
+
+# Capture Phase
+This is the opposite of bubbling up, it "captures" the element where the event took place from the top down.
